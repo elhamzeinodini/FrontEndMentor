@@ -1,0 +1,57 @@
+// colors
+$color-primary: #094899;
+$color-secondary: #ba135f;
+
+// status colors
+$color-success: #28c76f;
+$color-danger: #ea5455;
+$color-warning: #ff9f43;
+$color-info: #00cfe8;
+
+// text colors
+$color-text-primary: #636578;
+$color-text-secondary: #9495a2;
+
+// neutral colors
+$color-gray: #9a9a9a;
+$color-stroke: #d8d8d8;
+$color-black: #1b1b1b;
+$color-white: #ffffff;
+$element-bg: #f3f6f9;
+
+// font sizes
+$font-size-xxl: 36px;
+$font-size-xl: 24px;
+$font-size-lg: 18px;
+$font-size-md: 14px;
+$font-size-sm: 12px;
+$font-size-xs: 10px;
+
+//  font weights
+$font-weight-light: 400;
+$font-weight-semi-bold: 600;
+$font-weight-bold: 700;
+$font-weight-extra-bold: 900;
+
+// screen breakpoints
+$desktop-breakpoint: 1400px;
+$mini-desktop-breakpoint: 1200px;
+$laptop-breakpoint: 992px;
+$tablet-breakpoint: 768px;
+$mobile-breakpoint: 575px;
+$mobile-sm-breakpoint: 420px;
+$mobile-xs-breakpoint: 360px;
+
+// box shadow
+$sidebar-shadow: 0px 2px 5px #ababab;
+$default-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+$table-shadow: -2px 0px 5px rgba(33, 35, 38, 0.1);
+
+// border radius
+$large-border-radius: 16px;
+$medium-border-radius: 8px;
+$small-border-radius: 6px;
+
+// other default styles
+$default-font-family: 'Inter';
+$default-transition: 0.3s;

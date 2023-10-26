@@ -1,0 +1,132 @@
+body {
+  margin: 0;
+  padding: 0;
+  min-width: 320px;
+  background-color: #fbfcfd;
+  box-sizing: border-box;
+  font-family: $default-font-family, Tahoma, sans-serif;
+  overflow-x: hidden;
+}
+
+* {
+  @include boxSizing(border-box);
+}
+
+p,
+b,
+a,
+div {
+  font-family: $default-font-family, Tahoma, sans-serif;
+  font-size: $font-size-md;
+  text-decoration: none;
+}
+
+p {
+  color: $color-text-secondary;
+}
+
+a {
+  color: $color-text-primary;
+  &:visited {
+    color: inherit;
+  }
+}
+
+input,
+textarea {
+  font-family: $default-font-family, Tahoma, sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: $default-font-family, Tahoma, sans-serif;
+  color: $color-text-primary;
+}
+
+h1 {
+  font-size: $font-size-xxl;
+}
+
+h2 {
+  font-size: $font-size-xl;
+}
+
+h3 {
+  font-size: $font-size-lg;
+}
+
+h4 {
+  font-size: $font-size-md;
+}
+
+h5 {
+  font-size: $font-size-md;
+}
+
+h6 {
+  font-size: $font-size-md;
+}
+
+ul,
+li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+///////////////////////////////// global.ts related css
+/// status with bullet
+.status {
+  $status-clr: (
+    'online': $color-success,
+    'offline': $color-danger,
+    'pending': $color-warning,
+    'info': $color-info,
+    'primary': $color-primary
+  );
+
+  @each $status, $clr in $status-clr {
+    &-#{$status} {
+      color: $clr;
+      font-size: $font-size-sm;
+      font-weight: $font-weight-semi-bold !important;
+      position: relative;
+      &::before {
+        content: '';
+        width: 9px;
+        height: 9px;
+        border-radius: 50%;
+        background-color: $clr;
+        position: absolute;
+        inset: 0.15rem auto auto -0.8rem;
+      }
+    }
+  }
+}
+
+/// icon buttons
+.icon {
+  $icon-map: (
+    'filter': $color-primary,
+    'hand': $color-pending,
+    'chat': $color-success,
+    'trash': $color-danger
+  );
+
+  @each $type, $clr in $icon-map {
+    &-#{$type} {
+      color: $clr;
+      border-color: $clr;
+      width: 48px !important;
+      height: 48px !important;
+      & i {
+        font-size: 20px !important;
+        color: $clr;
+      }
+    }
+  }
+}
