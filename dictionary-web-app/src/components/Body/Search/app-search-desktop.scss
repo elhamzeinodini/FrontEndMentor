@@ -1,0 +1,11 @@
+.search{
+    margin-inline: auto;
+    margin-bottom: $rm-2;
+    &__svg{
+        color: $clr-accent-300;
+        margin: .2rem 1.5rem 0 0;
+    }
+    &__input{
+        background-color: $clr-neutral-200;
+    }
+}

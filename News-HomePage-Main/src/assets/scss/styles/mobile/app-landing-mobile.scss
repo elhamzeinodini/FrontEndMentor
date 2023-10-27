@@ -1,0 +1,15 @@
+.landing{
+    &__img{
+        margin-inline: auto;
+    }
+    &__title{
+        margin-block: $rm-1-5;
+        font-size: $rm-3;
+        font-weight: 600;
+    }
+    &__subtitle{
+        color: $dark-grayish-blue;
+        margin-bottom: $rm-2;
+        line-height: 1.6rem;
+    }
+}

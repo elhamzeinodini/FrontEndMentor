@@ -1,0 +1,25 @@
+.post{
+    &__content{
+        display: flex;
+        align-items: center;
+        margin-bottom: $rm-2;
+    }
+    &__info{
+        margin-left: $rm-1;
+        width: 19rem;
+        height: 9rem;
+    }
+    &__count{
+        font-size: $rm-2;
+        font-weight: 700;
+        color: $grayish-blue;
+    }
+    &__title{
+        font-weight: 600;
+        margin-block: $rm-0-5;
+    }
+    &__subtitle{
+        color:$dark-grayish-blue;
+        font-size: .9rem;
+    }
+}

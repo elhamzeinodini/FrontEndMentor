@@ -1,0 +1,8 @@
+@include md{
+    .info{
+        &__thumbnail{
+            flex-wrap: wrap;
+            gap: $rm-0-5;
+        }
+    }
+}

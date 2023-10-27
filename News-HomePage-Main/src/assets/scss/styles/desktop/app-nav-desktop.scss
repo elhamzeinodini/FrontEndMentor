@@ -1,0 +1,15 @@
+@include lg{
+    .nav{
+        height: 10vh;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        &__list{
+            display: flex;
+            width: 28rem;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: -.1rem;
+        }
+    }
+}

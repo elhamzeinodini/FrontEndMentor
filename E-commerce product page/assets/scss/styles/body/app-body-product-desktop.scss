@@ -1,0 +1,24 @@
+.info{
+    width: 50%;
+    &__img{
+        &__item{
+            width: 90%;
+            border-radius: $rm-0-5;
+            margin-bottom: $rm-1;
+        }
+    }
+    &__thumbnail{
+        display: flex;
+        justify-content: space-between;
+        width: 90%;
+        &__item{
+            width: 5rem;
+            height: 5rem;
+            border-radius: $rm-0-5;
+            cursor: pointer;
+            &--selected{
+                border: 2px solid $orange;
+            }
+        }
+    }
+}

@@ -1,0 +1,4 @@
+<template>
+    <app-mobile></app-mobile>
+    <app-desktop></app-desktop>
+</template>

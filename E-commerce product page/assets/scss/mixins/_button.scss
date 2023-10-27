@@ -1,0 +1,11 @@
+@mixin button($clr, $width){
+    all: unset;
+    display: block;
+    width: $width;
+    box-sizing: border-box;
+    background-color: $clr;
+    padding: $rm-0-5 $rm-1;
+    cursor: pointer;
+    border-radius: $rm-0-5;
+    text-align: center;
+}

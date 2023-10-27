@@ -1,0 +1,32 @@
+.nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-block: $rm-2;
+    &__logo{
+        width: $rm-3;
+        height: $rm-2;
+    }
+    &__menu{
+        z-index: 9999;
+        background-color: $off-white;
+        transition: .3s;
+        position: absolute;
+        inset: -2rem 0 auto auto;
+        width: 70%;
+        height: 100%;
+        padding: $rm-2;
+        box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+    }
+    &__close{
+        float: right;
+    }
+    &__list{
+        margin-top: 5rem;
+    }
+    &__item{
+        margin-block: $rm-1-5;
+        font-weight: 500;
+        cursor: pointer;
+    }
+}

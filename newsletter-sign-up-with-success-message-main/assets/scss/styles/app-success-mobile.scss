@@ -1,0 +1,25 @@
+@include sm {
+  .success {
+    width: 100vw;
+    height: 70vh;
+    overflow-x: hidden;
+    &__content {
+      width: 100%;
+      height: 90%;
+      margin-top: $rm-3;
+      @include flex-box(space-between, flex-start, column);
+    }
+
+    &__img{
+        margin-bottom: $rm-1;
+    }
+
+    &__subtitle{
+        max-width: 40ch;
+    }
+
+    &__info{
+        height: 65%;
+    }
+  }
+}

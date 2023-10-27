@@ -1,0 +1,18 @@
+@include md {
+  .news {
+    &__title {
+      font-size: $rm-2-5;
+      display: inline-block;
+      margin-bottom: $rm-1;
+    }
+    &__content {
+      &__title {
+        font-size: $rm-2;
+      }
+      &__subtitle {
+        font-size: $rm-1-5;
+        margin-block: $rm-2;
+      }
+    }
+  }
+}

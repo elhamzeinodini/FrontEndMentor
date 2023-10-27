@@ -1,0 +1,57 @@
+.cart {
+  width: 90%;
+  height: 15rem;
+  border-radius: $rm-1;
+  padding: $rm-1 $rm-0-5;
+  margin-inline: auto;
+  background-color: $white;
+  z-index: 9999;
+  &__title {
+    position: relative;
+    &::after {
+      content: "";
+      position: absolute;
+      inset: $rm-1-5 auto auto 0;
+      width: 100%;
+      height: 1rem;
+      border-bottom: 1px solid $grayish-blue;
+    }
+  }
+  &__status {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60%;
+    color: $dark-grayish-blue;
+    font-weight: 700;
+    margin-top: $rm-2;
+  }
+  &__item {
+    color: $dark-grayish-blue;
+    margin-block: $rm-2;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    &__info {
+      display: flex;
+      flex-direction: column;
+    }
+    &__name {
+      font-size: $rm-0-75;
+      font-weight: 700;
+    }
+    &__img {
+      width: 2rem;
+      height: 2rem;
+    }
+    &__icon{
+      cursor: pointer;
+      z-index: 9999;
+    }
+  }
+  &__btn {
+    @include button($orange, 100%);
+    color: $white;
+    font-weight: 700;
+  }
+}

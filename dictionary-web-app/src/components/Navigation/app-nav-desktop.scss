@@ -1,0 +1,39 @@
+.nav {
+    width: 50vw;
+    margin-inline: auto;
+    margin-block: $rm-3;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: $rm-1;
+    position: relative;
+
+    &__content{
+        display: flex;
+        align-items: center;
+    }
+
+    &__select{
+        margin: 0 $rm-0-5;
+    }
+
+    &__logo {
+        cursor: pointer;
+    }
+
+    &__divider {
+        border-left: 1px solid $clr-neutral-300;
+        height: 70px;
+        position: absolute;
+        inset: -.1rem 7.3rem auto auto;
+    }
+    &__toggle{
+        margin: 0 $rm-1-5;
+    }
+    &__img{
+        &__moon{
+            cursor: pointer;
+            margin-top: -.3rem;
+        }
+    }
+}

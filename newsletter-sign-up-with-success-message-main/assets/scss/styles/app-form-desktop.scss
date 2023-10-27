@@ -1,0 +1,34 @@
+.form {
+  margin-top: $rm-1;
+  &__label {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 700;
+    font-size: $rm-0-75;
+    margin-block: $rm-1;
+    &__item {
+      margin-bottom: $rm-0-5;
+    }
+    &__error {
+      color: $tomato;
+    }
+  }
+  &__input {
+    padding: $rm-1 $rm-1-5;
+    border-radius: $rm-0-5;
+    border: 1px solid $grey;
+    margin-bottom: $rm-1;
+    @include layout();
+    &--error {
+      border-color: $tomato;
+      background-color: pink;
+      &.form__input {
+        color: $tomato;
+      }
+    }
+  }
+  &__btn {
+    @include button();
+  }
+}

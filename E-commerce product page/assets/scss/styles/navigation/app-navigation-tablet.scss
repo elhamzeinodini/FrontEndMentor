@@ -1,0 +1,42 @@
+@include md{
+    .nav{
+        margin-top: $rm-1;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: relative;
+        &::after{
+            content: "";
+            position: absolute;
+            width: 100%;
+            border-bottom: 1px solid $grayish-blue;
+            inset: $rm-3 auto auto 0;
+        }
+        &__left , &__right{
+            display: flex;
+        }
+        &__list{
+            display: flex;
+            width: 17rem;
+            justify-content: space-between;
+            align-items: center;
+            margin-left: $rm-2;
+        }
+        &__item{
+            cursor: pointer;
+            font-size: $rm-0-75;
+            position: relative;
+            &:hover::after, &:active{
+                content: "";
+                position: absolute;
+                inset: 2.2rem auto auto 0;
+                width: 100%;
+                border-bottom: 4px solid $orange;
+                transition: .7s;
+            }
+        }
+        &__profile{
+            margin-top: .2rem;
+        }
+    }
+}

@@ -1,0 +1,58 @@
+.content{
+    padding: $rm-0-5;
+    width: 50vw;
+    margin-inline: auto;
+    &__word{
+        font-size: 4rem;
+        font-weight: bold;
+        margin-bottom: 2rem;
+    }
+    &__phonetic{
+        width: 70%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        margin: $rm-1 0;
+        &__item{
+            font-size: $rm-1-5;
+            color: $clr-accent-400;
+            font-weight: bold;
+        }
+    }
+    &__part{
+        width: 60%;
+        display: flex;
+        justify-content: space-between;
+        margin: $rm-2 0;
+        &__item{
+            background-color: $clr-accent-200;
+            padding: $rm-0-5 $rm-1;
+            border-radius: .2rem;
+            color: $clr-accent-400;
+        }
+    }
+    &__def{
+        margin: $rm-1 0;
+        &__divider{
+            position: relative;
+            display: inline-block;
+            width: 100%;
+            &::after{
+                content: "";
+                width: 70%;
+                height: $rm-1;
+                border-bottom: 1px solid $clr-accent-200;
+                position: absolute;
+                inset: -.2rem auto auto 3rem;
+            }
+        }
+        &__list{
+            padding-left: $rm-1;
+        }
+        &__item{
+            padding-block: $rm-0-5;
+        }
+    }
+
+}
