@@ -2,6 +2,9 @@
 declare module 'vue' {
   export interface GlobalComponents {
     'AppHeaderMobile': typeof import("../components/Mobile/AppHeaderMobile.vue")['default']
+    'AppButtons': typeof import("../components/Shared/AppButtons.vue")['default']
+    'AppForm': typeof import("../components/Shared/AppForm.vue")['default']
+    'AppRegisterForm': typeof import("../components/Shared/AppRegisterForm.vue")['default']
     'NuxtWelcome': typeof import("../node_modules/@nuxt/ui-templates/dist/templates/welcome.vue")['default']
     'NuxtLayout': typeof import("../node_modules/nuxt/dist/app/components/layout")['default']
     'NuxtErrorBoundary': typeof import("../node_modules/nuxt/dist/app/components/nuxt-error-boundary")['default']
@@ -412,6 +415,9 @@ declare module 'vue' {
     'Html': typeof import("../node_modules/nuxt/dist/head/runtime/components")['Html']
     'Body': typeof import("../node_modules/nuxt/dist/head/runtime/components")['Body']
     'LazyAppHeaderMobile': typeof import("../components/Mobile/AppHeaderMobile.vue")['default']
+    'LazyAppButtons': typeof import("../components/Shared/AppButtons.vue")['default']
+    'LazyAppForm': typeof import("../components/Shared/AppForm.vue")['default']
+    'LazyAppRegisterForm': typeof import("../components/Shared/AppRegisterForm.vue")['default']
     'LazyNuxtWelcome': typeof import("../node_modules/@nuxt/ui-templates/dist/templates/welcome.vue")['default']
     'LazyNuxtLayout': typeof import("../node_modules/nuxt/dist/app/components/layout")['default']
     'LazyNuxtErrorBoundary': typeof import("../node_modules/nuxt/dist/app/components/nuxt-error-boundary")['default']
@@ -825,6 +831,9 @@ declare module 'vue' {
 }
 
 export const AppHeaderMobile: typeof import("../components/Mobile/AppHeaderMobile.vue")['default']
+export const AppButtons: typeof import("../components/Shared/AppButtons.vue")['default']
+export const AppForm: typeof import("../components/Shared/AppForm.vue")['default']
+export const AppRegisterForm: typeof import("../components/Shared/AppRegisterForm.vue")['default']
 export const NuxtWelcome: typeof import("../node_modules/@nuxt/ui-templates/dist/templates/welcome.vue")['default']
 export const NuxtLayout: typeof import("../node_modules/nuxt/dist/app/components/layout")['default']
 export const NuxtErrorBoundary: typeof import("../node_modules/nuxt/dist/app/components/nuxt-error-boundary")['default']
@@ -1235,6 +1244,9 @@ export const Head: typeof import("../node_modules/nuxt/dist/head/runtime/compone
 export const Html: typeof import("../node_modules/nuxt/dist/head/runtime/components")['Html']
 export const Body: typeof import("../node_modules/nuxt/dist/head/runtime/components")['Body']
 export const LazyAppHeaderMobile: typeof import("../components/Mobile/AppHeaderMobile.vue")['default']
+export const LazyAppButtons: typeof import("../components/Shared/AppButtons.vue")['default']
+export const LazyAppForm: typeof import("../components/Shared/AppForm.vue")['default']
+export const LazyAppRegisterForm: typeof import("../components/Shared/AppRegisterForm.vue")['default']
 export const LazyNuxtWelcome: typeof import("../node_modules/@nuxt/ui-templates/dist/templates/welcome.vue")['default']
 export const LazyNuxtLayout: typeof import("../node_modules/nuxt/dist/app/components/layout")['default']
 export const LazyNuxtErrorBoundary: typeof import("../node_modules/nuxt/dist/app/components/nuxt-error-boundary")['default']

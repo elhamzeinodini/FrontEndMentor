@@ -1,0 +1,39 @@
+@media screen and (max-width: 480px) {
+  .form {
+    &__title {
+        font-size: $font-size-xl;
+        color: $marine-blue;
+        margin-bottom: 8px !important;
+    }
+    &__subtitle {
+        display: block;
+        color: $cool-gray;
+    }
+    &__inputs {
+        margin-top: $font-size-xl;
+        &__label {
+            @include flexBox();
+            & label {
+                color: $marine-blue;
+                display: inline-block;
+                margin-bottom: 4px;
+                &:nth-child(2) {
+                    color: $color-danger;
+                }
+            }
+        }
+        &__item {
+            @include flexBox(flex-start, stretch, column);
+            &:nth-of-type(2) {
+                margin-block: 16px;
+            }
+
+            & input {
+                border-radius: 4px;
+                border: 1px solid $cool-gray;
+                padding: 1rem 0.75rem;
+            }
+        }
+    }
+  }
+}

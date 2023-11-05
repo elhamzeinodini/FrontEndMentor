@@ -1,0 +1,7 @@
+@media screen and (max-width: 480px){
+    .form__action{
+        @include flexBox(flex-end, stretch, row);
+        margin-top: $font-size-xxl;
+        margin-bottom: $font-size-xl;
+    }
+}

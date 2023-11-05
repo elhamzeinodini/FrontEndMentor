@@ -1,0 +1,12 @@
+@media screen and (max-width: 480px) {
+  .form {
+    padding-inline: $font-size-xl;
+    border-radius: $medium-border-radius;
+    background-color: $color-white;
+    box-shadow: $default-shadow;
+    width: 90%;
+    margin-inline: auto;
+    position: absolute;
+    inset: 6rem auto auto 1.5rem;
+  }
+}
