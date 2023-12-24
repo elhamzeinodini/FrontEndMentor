@@ -1,0 +1,37 @@
+// colors
+$black: #333;
+$orange: hsl(26, 100%, 55%);
+$pale-orange: hsl(25, 100%, 94%);
+$very-dark-blue: hsl(220, 13%, 13%);
+$dark-grayish-blue: hsl(219, 9%, 45%);
+$grayish-blue: hsl(220, 14%, 75%);
+$light-grayish-blue: hsl(223, 64%, 98%);
+$white: hsl(0, 0%, 100%);
+$off-black: hsl(0, 0%, 0%);
+
+// font sizes
+$font-size-xxl: 36px;
+$font-size-xl: 24px;
+$font-size-lg: 18px;
+$font-size-md: 14px;
+$font-size-sm: 12px;
+$font-size-xs: 10px;
+
+//  font weights
+$font-weight-light: 400;
+$font-weight-semi-bold: 600;
+$font-weight-bold: 700;
+$font-weight-extra-bold: 900;
+
+// screen breakpoints
+$desktop-breakpoint: 1400px;
+$mini-desktop-breakpoint: 1200px;
+$laptop-breakpoint: 992px;
+$tablet-breakpoint: 768px;
+$mobile-breakpoint: 575px;
+$mobile-sm-breakpoint: 420px;
+$mobile-xs-breakpoint: 360px;
+
+// other default styles
+$default-font: 'Kumbh Sans';
+$default-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
