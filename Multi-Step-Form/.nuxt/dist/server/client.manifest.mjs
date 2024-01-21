@@ -1,1 +1,0 @@
-export { default } from "file:///home/elham/Documents/github%20repositories/FrontEndMentor/Multi-Step-Form/node_modules/@nuxt/vite-builder/dist/runtime/client.manifest.mjs"
