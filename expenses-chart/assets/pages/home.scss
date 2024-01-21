@@ -1,0 +1,34 @@
+.expenses-chart {
+  width: 95vw;
+
+  .top-header {
+    .content {
+      padding: $font-size-xs;
+    }
+  }
+
+  .chart {
+    .footer {
+      padding-inline: calc($font-size-xs - 4px);
+      position: relative;
+      margin-top: $font-size-xl;
+
+      &::before {
+        content: "";
+        width: 100%;
+        position: absolute;
+        inset: -0.6rem auto auto 0;
+        border-bottom: 1px solid $cream;
+      }
+    }
+  }
+
+  // ===================== Media Queries =================
+  @media screen and (min-width: $tablet-breakpoint) and (max-width: $laptop-breakpoint) {
+    width: 50vw;
+  }
+
+  @media screen and (min-width: $laptop-breakpoint) {
+    width: 40vw;
+  }
+}

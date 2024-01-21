@@ -1,0 +1,42 @@
+.header {
+  width: 100% !important;
+  border-radius: $default-radius;
+
+  .content {
+    @include flexBox();
+
+    .left {
+      @include flexBox(flex-start, stretch, column);
+
+      span {
+        color: $medium-brown;
+      }
+
+      b {
+        margin-top: calc($font-size-xs - 4px);
+        display: block;
+        font-weight: $font-weight-bold;
+        font-size: $font-size-xl;
+      }
+
+      .top-title,
+      .top-price {
+        color: $color-white;
+      }
+    }
+
+    .right {
+      @include flexBox(flex-start, flex-end, column);
+
+      b {
+        color: $dark-brown;
+      }
+
+      span {
+        display: block;
+        font-size: $font-size-md;
+        color: $medium-brown;
+      }
+    }
+  }
+}

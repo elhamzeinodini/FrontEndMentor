@@ -1,0 +1,12 @@
+@mixin boxSizing($p: border-box) {
+  box-sizing: $p;
+  -webkit-box-sizing: $p;
+  -moz-box-sizing: $p;
+}
+
+@mixin flexBox($justify: space-between, $align: center, $direction: row) {
+  display: flex;
+  justify-content: $justify;
+  align-items: $align;
+  flex-direction: $direction;
+}

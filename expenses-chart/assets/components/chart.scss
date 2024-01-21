@@ -1,0 +1,51 @@
+.chart {
+  background-color: $color-white;
+  border-radius: $default-radius;
+  padding: $font-size-xs;
+  margin-top: $font-size-lg;
+
+  h4 {
+    letter-spacing: $default-letter-spacing;
+    color: $dark-brown;
+    margin-top: -1.2rem;
+  }
+
+  .chart-item {
+    margin-top: calc($font-size-xl + $font-size-sm);
+    @include flexBox(flex-start, center, column);
+
+    ul {
+      &:nth-child(1) {
+        @include flexBox(flex-start, flex-end, row);
+        width: 100%;
+
+        .column {
+          width: 100%;
+          background-color: $soft-red;
+          border-radius: calc($font-size-xs - 4px);
+
+          &:not(:last-child) {
+            margin-right: $font-size-xs;
+          }
+
+          &.highest {
+            background-color: $cyan;
+          }
+        }
+      }
+
+      &:nth-child(2) {
+        margin-top: $font-size-xs;
+        width: 100%;
+        @include flexBox();
+
+        li {
+          color: $medium-brown;
+          width: 100%;
+          font-size: $font-size-sm;
+          text-align: center;
+        }
+      }
+    }
+  }
+}
