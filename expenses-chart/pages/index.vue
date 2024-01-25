@@ -13,11 +13,11 @@
       </TheHeader>
     </div>
 
-    <div class="chart">
+    <div class="chart-wrapper">
       <TheChart />
 
       <div class="footer">
-        <TheHeader bg-clr="#fff">
+        <TheHeader bg-clr="hsl(33, 100%, 98%)">
           <template v-slot:left>
             <span class="bottom-title">Total this month</span>
             <b class="bottom-price">$ 478.33</b>

@@ -1,49 +1,69 @@
 .chart {
-  background-color: $color-white;
   border-radius: $default-radius;
-  padding: $font-size-xs;
+  padding: $font-size-lg $font-size-sm;
   margin-top: $font-size-lg;
+  margin-inline: $font-size-sm;
+  position: relative;
+
+  &::before {
+    content: "";
+    width: 100%;
+    position: absolute;
+    inset: auto auto 0 0;
+    border-bottom: 1px solid $cream;
+  }
 
   h4 {
-    letter-spacing: $default-letter-spacing;
+    font-size: $font-size-lg;
     color: $dark-brown;
-    margin-top: -1.2rem;
   }
 
   .chart-item {
+    @include flexBox(space-between, stretch, row);
     margin-top: calc($font-size-xl + $font-size-sm);
-    @include flexBox(flex-start, center, column);
 
-    ul {
-      &:nth-child(1) {
-        @include flexBox(flex-start, flex-end, row);
-        width: 100%;
+    .wrapper {
+      @include flexBox(flex-end, center, column);
 
-        .column {
-          width: 100%;
-          background-color: $soft-red;
-          border-radius: calc($font-size-xs - 4px);
+      .column {
+        padding: 2px;
+        width: 40px;
+        border-radius: $font-size-xxs;
+        background-color: $soft-red;
+        cursor: pointer;
+        position: relative;
 
-          &:not(:last-child) {
-            margin-right: $font-size-xs;
-          }
+        .tooltip {
+          background-color: $dark-brown;
+          color: $color-white;
+          font-size: $font-size-md;
+          padding: $font-size-xxs;
+          border-radius: $font-size-xxs;
+          display: inline-block;
+          position: absolute;
+          inset: -2.2rem auto auto 0;
+        }
 
-          &.highest {
-            background-color: $cyan;
-          }
+        &.high-score {
+          background-color: $cyan;
         }
       }
 
-      &:nth-child(2) {
-        margin-top: $font-size-xs;
-        width: 100%;
-        @include flexBox();
+      span {
+        font-size: $font-size-md;
+        color: $medium-brown;
+        display: inline-block;
+        margin-top: $font-size-xxs;
+      }
+    }
+  }
 
-        li {
-          color: $medium-brown;
-          width: 100%;
-          font-size: $font-size-sm;
-          text-align: center;
+  // ===================== Media Queries =================
+  @media screen and (max-width: $mobile-breakpoint) {
+    .chart-item {
+      .wrapper {
+        .column {
+          width: 30px !important;
         }
       }
     }

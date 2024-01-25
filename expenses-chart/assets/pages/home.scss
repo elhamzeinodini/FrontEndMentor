@@ -3,23 +3,17 @@
 
   .top-header {
     .content {
-      padding: $font-size-xs;
+      padding: $font-size-lg $font-size-xs;
+      margin-inline: $font-size-xs;
     }
   }
 
-  .chart {
-    .footer {
-      padding-inline: calc($font-size-xs - 4px);
-      position: relative;
-      margin-top: $font-size-xl;
+  .chart-wrapper {
+    background-color: $color-white;
+    border-radius: $default-radius;
 
-      &::before {
-        content: "";
-        width: 100%;
-        position: absolute;
-        inset: -0.6rem auto auto 0;
-        border-bottom: 1px solid $cream;
-      }
+    .footer {
+      padding: $font-size-md;
     }
   }
 
@@ -29,6 +23,6 @@
   }
 
   @media screen and (min-width: $laptop-breakpoint) {
-    width: 40vw;
+    width: 30vw;
   }
 }

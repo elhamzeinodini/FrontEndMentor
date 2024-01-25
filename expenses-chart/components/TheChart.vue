@@ -3,18 +3,19 @@
     <h4>Spending - Last 7 days</h4>
 
     <div class="chart-item">
-      <ul>
-        <li
-          v-for="col in columns"
-          :key="col"
-          :style="{ height: `${col}px` }"
-          :class="['column', { highest: col === highestScore }]"
-        ></li>
-      </ul>
+      <div v-for="col in formattedColumns" :key="col.day" class="wrapper">
+        <div
+          :class="['column', col.amount === highestScore && 'high-score']"
+          :style="{ height: `${col.amount}px` }"
+          @click="showColumnTooltip(col.amount)"
+        >
+          <span v-show="col.tooltipVisible" class="tooltip"
+            >${{ col.amount }}</span
+          >
+        </div>
 
-      <ul>
-        <li v-for="day in days" :key="day">{{ day }}</li>
-      </ul>
+        <span>{{ col.day }}</span>
+      </div>
     </div>
   </section>
 </template>
@@ -39,17 +40,39 @@ async function getChartData() {
 }
 
 //////////////////////////// computed properties
-const days = computed(() => {
-  return chartInfo.value.map((item: IChart) => item.day);
+const formattedColumns = computed(() => {
+  const chartColumn = ref<
+    {
+      amount: number;
+      tooltipVisible: boolean;
+      day: string;
+    }[]
+  >([]);
+
+  chartInfo.value.map((item) => {
+    return chartColumn.value.push({
+      amount: item.amount,
+      tooltipVisible: false,
+      day: item.day,
+    });
+  });
+  return chartColumn.value;
 });
 
 const columns = computed(() => {
-  return chartInfo.value.map((item: IChart) => item.amount);
+  return chartInfo.value.map((item) => item.amount);
 });
 
 const highestScore = computed(() => {
   return Math.max(...columns.value);
 });
+
+const showColumnTooltip = (colWidth: number) => {
+  const selectedCol = formattedColumns.value.find(
+    (item) => item.amount === colWidth
+  );
+  if (selectedCol) selectedCol.tooltipVisible = !selectedCol.tooltipVisible;
+};
 
 // /////////////////////////// mounted
 onMounted(() => {
