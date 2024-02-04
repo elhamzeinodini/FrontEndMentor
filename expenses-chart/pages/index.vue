@@ -38,6 +38,24 @@
 useHead({
   title: "Expenses Chart",
 });
+
+// /////////////////////// animation
+const { $gsap } = useNuxtApp();
+
+const animateCard = () => {
+  const tl = $gsap.timeline();
+
+  tl.fromTo(
+    ".expenses-chart",
+    { y: 300, opacity: 0 },
+    { y: 0, opacity: 1, duration: 1.5, ease: "elastic.out" }
+  );
+};
+
+// /////////////////////// mounted
+onMounted(() => {
+  animateCard();
+});
 </script>
 
 <style lang="scss">
