@@ -98,6 +98,11 @@ h2 {
   font-size: var(--fs-lg);
 }
 
+h2:hover {
+  color: var(--clr-primary);
+  cursor: pointer;
+}
+
 p {
   text-wrap: pretty;
   font-size: calc(var(--fs-lg) - 2px);
