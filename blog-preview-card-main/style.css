@@ -1,0 +1,28 @@
+/* font link */
+@import url("https://fonts.googleapis.com/css2?family=Figtree:wght@300;400;500;600;700;800&display=swap");
+
+:root {
+  /* colors */
+  --clr-primary: hsl(47, 88%, 63%);
+  --clr-white: hsl(0, 0%, 100%);
+  --clr-gray: hsl(0, 0%, 50%);
+  --clr-black: hsl(0, 0%, 7%);
+
+  /* fonts */
+  --fs-xs: 10px;
+  --fs-md: 12px;
+  --fs-lg: 16px;
+  --fs-xl: 24px;
+
+  /* defaults */
+  --font-family: "Figtree";
+}
+
+body {
+  min-height: 100vh;
+  font-family: var(--font-family), sans-serif;
+  background-color: var(--clr-primary);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
