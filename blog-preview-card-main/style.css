@@ -26,3 +26,20 @@ body {
   justify-content: center;
   align-items: center;
 }
+
+img {
+    max-width: 100%;
+}
+
+ul, li {
+    list-style-type: none;
+}
+
+h1,h2,h3,h4,h5,h6 {
+    margin-bottom: 0 !important;
+}
+
+
+p {
+    text-wrap: pretty;
+}
