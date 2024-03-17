@@ -2,6 +2,10 @@
   <section class="home-page">
     <TheNavbar />
 
+    <div v-if="isNavDrawerOpen" class="hidden-sm-and-up">
+      <NavigationDrawer />
+    </div>
+
     <div class="carousel">
       <el-carousel indicator-position="outside">
         <el-carousel-item v-for="item in carouselInfo" :key="item.id">
@@ -43,9 +47,14 @@
 </template>
 
 <script setup lang="ts">
+import { useAppStore } from "~/store/app";
+import "element-plus/theme-chalk/display.css";
 import { homeContent } from "~/assets/staticData";
 const { title, subtitle, paragraphText, price, discount, discountedPrice } =
   homeContent;
+
+///////////////////////////// app store
+const { isNavDrawerOpen } = storeToRefs(useAppStore());
 
 ///////////////////////////// static data
 const carouselInfo = [

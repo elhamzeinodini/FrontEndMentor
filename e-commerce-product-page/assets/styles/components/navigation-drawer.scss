@@ -1,0 +1,25 @@
+aside {
+  width: 40vw;
+  height: 100vh;
+  position: absolute;
+  inset: 0 auto auto 0;
+  background-color: $white;
+  z-index: 99999;
+  padding: $font-size-xl;
+
+  .close-icon {
+    img {
+      cursor: pointer;
+    }
+  }
+
+  .links {
+    margin-top: $font-size-xxl;
+
+    li {
+      &:not(:last-child) {
+        margin-bottom: $font-size-xl;
+      }
+    }
+  }
+}

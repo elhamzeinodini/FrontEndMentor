@@ -1,7 +1,7 @@
 .home-page {
   .carousel {
     img {
-      width: 100%;
+      width: 100% !important;
       height: 100%;
     }
 
@@ -28,7 +28,7 @@
     p {
       margin-block: $font-size-sm;
       font-size: $font-size-md;
-      max-width: 600px;
+      max-width: 100%;
       width: 90vw !important;
       text-wrap: pretty;
       line-height: 1.3rem;
@@ -36,6 +36,7 @@
     }
 
     .pricing {
+      margin-top: $font-size-lg;
       @include FlexBox();
 
       .left {
@@ -105,4 +106,5 @@
       }
     }
   }
+  // ============ Media Queries ===============
 }
