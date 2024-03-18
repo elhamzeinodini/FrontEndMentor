@@ -77,16 +77,6 @@
       width: 100%;
 
       button {
-        all: unset;
-        cursor: pointer;
-        box-sizing: border-box;
-        font-family: inherit;
-        padding: $font-size-lg;
-        border-radius: $font-size-sm;
-        width: 100%;
-        @include FlexBox(center, center, row);
-        font-weight: $font-weight-bold;
-
         img {
           &.disabled {
             cursor: not-allowed;

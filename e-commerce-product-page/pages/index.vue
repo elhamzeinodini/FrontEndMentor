@@ -70,6 +70,7 @@ const { title, subtitle, paragraphText, price, discount, discountedPrice } =
   homeContent;
 
 ///////////////////////////// app store
+const { formatPrice } = useAppStore();
 const { isNavDrawerOpen } = storeToRefs(useAppStore());
 
 //////////////////////////// product store
@@ -86,14 +87,6 @@ const carouselInfo = [
 ];
 
 /////////////////////////// methods
-const formatPrice = (price: number) => {
-  return price.toLocaleString("en-us", {
-    style: "currency",
-    minimumFractionDigits: 2,
-    currency: "USD",
-  });
-};
-
 const increment = () => {
   itemQuantity.value++;
 };
