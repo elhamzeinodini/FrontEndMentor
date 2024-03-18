@@ -1,4 +1,6 @@
 .home-page {
+  position: relative;
+
   .carousel {
     img {
       width: 100% !important;
@@ -84,6 +86,12 @@
         width: 100%;
         @include FlexBox(center, center, row);
         font-weight: $font-weight-bold;
+
+        img {
+          &.disabled {
+            cursor: not-allowed;
+          }
+        }
 
         &:nth-child(1) {
           @include FlexBox();

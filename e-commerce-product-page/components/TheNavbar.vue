@@ -11,7 +11,11 @@
       </div>
 
       <div class="right">
-        <img src="/images/icons/icon-cart.svg" alt="shopping cart" />
+        <img
+          src="/images/icons/icon-cart.svg"
+          alt="shopping cart"
+          @click="isAddToCartModalVisible = true"
+        />
         <img src="/images/app/image-avatar.png" alt="avatar" />
       </div>
     </nav>
@@ -20,9 +24,13 @@
 
 <script setup lang="ts">
 import { useAppStore } from "~/store/app";
+import { useProductStore } from "~/store/product";
 
 ///////////////////////////// app store
 const { isNavDrawerOpen } = storeToRefs(useAppStore());
+
+//////////////////////////// product store
+const { isAddToCartModalVisible } = storeToRefs(useProductStore());
 </script>
 
 <style lang="scss">

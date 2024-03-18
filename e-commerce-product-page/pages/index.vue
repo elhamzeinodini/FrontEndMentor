@@ -6,6 +6,10 @@
       <NavigationDrawer />
     </div>
 
+    <div v-if="isAddToCartModalVisible">
+      <CartConfirmation />
+    </div>
+
     <div class="carousel">
       <el-carousel indicator-position="outside">
         <el-carousel-item v-for="item in carouselInfo" :key="item.id">
@@ -32,9 +36,20 @@
 
       <div class="actions">
         <button>
-          <img src="/images/icons/icon-plus.svg" alt="plus" />
-          <span>0</span>
-          <img src="/images/icons/icon-minus.svg" alt="minus" />
+          <img
+            src="/images/icons/icon-plus.svg"
+            alt="plus"
+            @click="increment"
+          />
+
+          <span>{{ itemQuantity }}</span>
+
+          <img
+            src="/images/icons/icon-minus.svg"
+            alt="minus"
+            :class="itemQuantity <= 0 && 'disabled'"
+            @click="decrement"
+          />
         </button>
 
         <button>
@@ -48,6 +63,7 @@
 
 <script setup lang="ts">
 import { useAppStore } from "~/store/app";
+import { useProductStore } from "~/store/product";
 import "element-plus/theme-chalk/display.css";
 import { homeContent } from "~/assets/staticData";
 const { title, subtitle, paragraphText, price, discount, discountedPrice } =
@@ -55,6 +71,11 @@ const { title, subtitle, paragraphText, price, discount, discountedPrice } =
 
 ///////////////////////////// app store
 const { isNavDrawerOpen } = storeToRefs(useAppStore());
+
+//////////////////////////// product store
+const { isAddToCartModalVisible, itemQuantity } = storeToRefs(
+  useProductStore()
+);
 
 ///////////////////////////// static data
 const carouselInfo = [
@@ -71,6 +92,16 @@ const formatPrice = (price: number) => {
     minimumFractionDigits: 2,
     currency: "USD",
   });
+};
+
+const increment = () => {
+  itemQuantity.value++;
+};
+
+const decrement = () => {
+  if (itemQuantity.value > 0) {
+    itemQuantity.value--;
+  } else itemQuantity.value = 0;
 };
 </script>
 
