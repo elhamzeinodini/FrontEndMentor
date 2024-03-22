@@ -31,8 +31,11 @@ $mobile-breakpoint: 575px;
 $mobile-sm-breakpoint: 420px;
 $mobile-xs-breakpoint: 360px;
 
-
 // border radius
 $small-border-radius: 8px;
 $medium-border-radius: 14px;
 $large-border-radius: 16px;
+
+// box shadow
+$card-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+  rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;

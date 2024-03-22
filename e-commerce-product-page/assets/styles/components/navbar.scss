@@ -21,6 +21,23 @@
         width: 4rem;
       }
     }
+
+    .route-list {
+      margin-left: $font-size-xl;
+      @include FlexBox(flex-start, center, row);
+
+      li {
+        font-size: $font-size-sm;
+
+        a {
+          color: $dark-grayish-blue;
+        }
+
+        &:not(:last-child) {
+          margin-right: $font-size-sm;
+        }
+      }
+    }
   }
 
   .right {
@@ -32,6 +49,20 @@
       &:nth-child(2) {
         width: 2rem;
       }
+    }
+  }
+
+  // ============ Media Queries ===============
+  @media screen and (min-width: $tablet-breakpoint) {
+    position: relative;
+    margin-bottom: $font-size-xl;
+
+    &::after {
+      content: "";
+      position: absolute;
+      inset: auto auto -0.1rem 0;
+      width: 100%;
+      border-bottom: 1px solid $grayish-blue;
     }
   }
 }

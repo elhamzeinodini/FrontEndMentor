@@ -10,52 +10,57 @@
       <CartConfirmation />
     </div>
 
-    <div class="carousel">
-      <el-carousel indicator-position="outside">
-        <el-carousel-item v-for="item in carouselInfo" :key="item.id">
-          <img :src="`/images/product/${item.imgName}.jpg`" />
-        </el-carousel-item>
-      </el-carousel>
-    </div>
-
-    <div class="content">
-      <b>{{ title }}</b>
-      <h1>{{ subtitle }}</h1>
-      <p>{{ paragraphText }}</p>
-
-      <div class="pricing">
-        <div class="left">
-          <b>{{ formatPrice(discountedPrice) }}</b>
-          <span>{{ discount }}%</span>
-        </div>
-
-        <div class="right">
-          <span>{{ formatPrice(price) }}</span>
-        </div>
+    <div class="main">
+      <div class="carousel">
+        <el-carousel>
+          <el-carousel-item v-for="item in carouselInfo" :key="item.id">
+            <img
+              :src="`/images/product/${item.imgName}.jpg`"
+              alt="product img"
+            />
+          </el-carousel-item>
+        </el-carousel>
       </div>
 
-      <div class="actions">
-        <button>
-          <img
-            src="/images/icons/icon-plus.svg"
-            alt="plus"
-            @click="increment"
-          />
+      <div class="content">
+        <b>{{ title }}</b>
+        <h1>{{ subtitle }}</h1>
+        <p>{{ paragraphText }}</p>
 
-          <span>{{ itemQuantity }}</span>
+        <div class="pricing">
+          <div class="left">
+            <b>{{ formatPrice(discountedPrice) }}</b>
+            <span>{{ discount }}%</span>
+          </div>
 
-          <img
-            src="/images/icons/icon-minus.svg"
-            alt="minus"
-            :class="itemQuantity <= 0 && 'disabled'"
-            @click="decrement"
-          />
-        </button>
+          <div class="right">
+            <span>{{ formatPrice(price) }}</span>
+          </div>
+        </div>
 
-        <button>
-          <img src="/images/icons/icon-cart-white.svg" alt="cart" />
-          Add to cart
-        </button>
+        <div class="actions">
+          <button>
+            <img
+              src="/images/icons/icon-plus.svg"
+              alt="plus"
+              @click="increment"
+            />
+
+            <span>{{ itemQuantity }}</span>
+
+            <img
+              src="/images/icons/icon-minus.svg"
+              alt="minus"
+              :class="itemQuantity <= 0 && 'disabled'"
+              @click="decrement"
+            />
+          </button>
+
+          <button>
+            <img src="/images/icons/icon-cart-white.svg" alt="cart" />
+            Add to cart
+          </button>
+        </div>
       </div>
     </div>
   </section>
@@ -78,13 +83,16 @@ const { isAddToCartModalVisible, itemQuantity } = storeToRefs(
   useProductStore()
 );
 
-///////////////////////////// static data
+///////////////////////////// statics
 const carouselInfo = [
   { id: 1, imgName: "image-product-1" },
   { id: 2, imgName: "image-product-2" },
   { id: 3, imgName: "image-product-3" },
   { id: 4, imgName: "image-product-4" },
 ];
+
+/////////////////////////// states
+const isCarouselModalVisible = ref(true);
 
 /////////////////////////// methods
 const increment = () => {

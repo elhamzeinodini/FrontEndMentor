@@ -5,9 +5,17 @@
         <img
           src="/images/icons/icon-menu.svg"
           alt="menu"
+          class="hidden-sm-and-up"
           @click="isNavDrawerOpen = true"
         />
+
         <img src="/images/app/logo.svg" alt="logo" />
+
+        <ul class="route-list hidden-xs-only">
+          <li v-for="route in NavRoutes" :key="route.id">
+            <nuxt-link>{{ route.name }}</nuxt-link>
+          </li>
+        </ul>
       </div>
 
       <div class="right">
@@ -23,6 +31,7 @@
 </template>
 
 <script setup lang="ts">
+import "element-plus/theme-chalk/display.css";
 import { useAppStore } from "~/store/app";
 import { useProductStore } from "~/store/product";
 
@@ -31,6 +40,15 @@ const { isNavDrawerOpen } = storeToRefs(useAppStore());
 
 //////////////////////////// product store
 const { isAddToCartModalVisible } = storeToRefs(useProductStore());
+
+/////////////////////////// statics
+const NavRoutes = [
+  { id: 1, name: "Collections" },
+  { id: 2, name: "Men" },
+  { id: 3, name: "Women" },
+  { id: 4, name: "About" },
+  { id: 5, name: "Contact" },
+];
 </script>
 
 <style lang="scss">

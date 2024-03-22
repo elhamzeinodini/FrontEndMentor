@@ -1,0 +1,108 @@
+.cart-confirmation {
+  background-color: $white;
+  border-radius: $small-border-radius;
+  z-index: 999999;
+  padding: $font-size-sm;
+  box-shadow: $card-shadow;
+  height: 200px;
+
+  img {
+    cursor: pointer;
+  }
+
+  .head {
+    @include FlexBox();
+    position: relative;
+    margin-bottom: $font-size-lg;
+
+    &::after {
+      content: "";
+      position: absolute;
+      inset: auto auto -0.75rem 0;
+      border-bottom: 1px solid $grayish-blue;
+      width: 100%;
+    }
+  }
+
+  .checkout-list {
+    @include FlexBox(center, center, row);
+    margin-bottom: $font-size-xxs;
+    height: 80%;
+
+    .shop-details {
+      @include FlexBox(flex-start, stretch, column);
+      width: 100%;
+
+      .shop-item {
+        @include FlexBox(flex-start, center, row);
+
+        img {
+          &:nth-child(1) {
+            width: 4rem;
+            height: 4rem;
+            border-radius: $small-border-radius;
+          }
+
+          &:nth-child(2) {
+            cursor: pointer;
+          }
+        }
+
+        .content {
+          span {
+            &:nth-child(1) {
+              display: block;
+              font-size: $font-size-md;
+              font-weight: $font-weight-bold;
+              color: $dark-grayish-blue;
+            }
+
+            &:nth-child(2),
+            &:nth-child(3),
+            &:nth-child(4) {
+              font-size: $font-size-md;
+              font-weight: $font-weight-bold;
+              color: $dark-grayish-blue;
+            }
+
+            &:nth-child(3) {
+              margin-inline: $font-size-xxs;
+            }
+          }
+
+          .total {
+            font-size: $font-size-md !important;
+            color: $black !important;
+            margin-left: $font-size-sm;
+          }
+        }
+      }
+
+      button {
+        margin-top: $font-size-sm;
+      }
+    }
+  }
+
+  @media screen and (max-width: $tablet-breakpoint) {
+    width: 90%;
+    position: absolute;
+    inset: 3.7rem auto auto 50%;
+    transform: translateX(-50%);
+  }
+
+  @media screen and (min-width: $tablet-breakpoint) {
+    position: absolute;
+    inset: 3.5rem 3rem auto auto;
+    width: 300px;
+    transform: translateX(0) !important;
+
+    .checkout-list {
+      .shop-details {
+        .shop-item {
+          @include FlexBox();
+        }
+      }
+    }
+  }
+}
