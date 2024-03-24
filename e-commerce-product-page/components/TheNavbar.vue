@@ -19,18 +19,22 @@
       </div>
 
       <div class="right">
-        <img
-          src="/images/icons/icon-cart.svg"
-          alt="shopping cart"
-          @click="isAddToCartModalVisible = true"
-        />
-        <img src="/images/app/image-avatar.png" alt="avatar" />
+        <div class="shop-icon">
+          <span v-if="itemQuantity">{{ itemQuantity }}</span>
+
+          <el-icon @click="isAddToCartModalVisible = true">
+            <ShoppingTrolley />
+          </el-icon>
+        </div>
+
+        <img src="/images/app/image-avatar.png" alt="avatar" class="avatar" />
       </div>
     </nav>
   </header>
 </template>
 
 <script setup lang="ts">
+import { ShoppingTrolley } from "@element-plus/icons-vue";
 import "element-plus/theme-chalk/display.css";
 import { useAppStore } from "~/store/app";
 import { useProductStore } from "~/store/product";
@@ -39,7 +43,9 @@ import { useProductStore } from "~/store/product";
 const { isNavDrawerOpen } = storeToRefs(useAppStore());
 
 //////////////////////////// product store
-const { isAddToCartModalVisible } = storeToRefs(useProductStore());
+const { isAddToCartModalVisible, itemQuantity } = storeToRefs(
+  useProductStore()
+);
 
 /////////////////////////// statics
 const NavRoutes = [

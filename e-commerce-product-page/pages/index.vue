@@ -11,15 +11,25 @@
     </div>
 
     <div class="main">
-      <div class="carousel">
-        <el-carousel>
-          <el-carousel-item v-for="item in carouselInfo" :key="item.id">
-            <img
-              :src="`/images/product/${item.imgName}.jpg`"
-              alt="product img"
-            />
-          </el-carousel-item>
-        </el-carousel>
+      <div class="hidden-md-and-up">
+        <ProductCarousel />
+      </div>
+
+      <div class="product-img-selection hidden-sm-and-down">
+        <div class="main-img">
+          <img :src="mainImgUrl" alt="product" />
+        </div>
+
+        <ul class="thumbnails-list">
+          <li
+            v-for="img in thumbnails"
+            :key="img.id"
+            :class="mainImgUrl === img.fullSizeImgURL && 'selected-product'"
+            @click="mainImgUrl = img.fullSizeImgURL"
+          >
+            <img :src="img.url" alt="product thumbnail" />
+          </li>
+        </ul>
       </div>
 
       <div class="content">
@@ -83,16 +93,32 @@ const { isAddToCartModalVisible, itemQuantity } = storeToRefs(
   useProductStore()
 );
 
-///////////////////////////// statics
-const carouselInfo = [
-  { id: 1, imgName: "image-product-1" },
-  { id: 2, imgName: "image-product-2" },
-  { id: 3, imgName: "image-product-3" },
-  { id: 4, imgName: "image-product-4" },
-];
+//////////////////////////// states
+const mainImgUrl = ref("/images/product/image-product-1.jpg");
 
-/////////////////////////// states
-const isCarouselModalVisible = ref(true);
+/////////////////////////// statics
+const thumbnails = ref([
+  {
+    id: 1,
+    url: "/images/product/image-product-1-thumbnail.jpg",
+    fullSizeImgURL: "/images/product/image-product-1.jpg",
+  },
+  {
+    id: 2,
+    url: "/images/product/image-product-2-thumbnail.jpg",
+    fullSizeImgURL: "/images/product/image-product-2.jpg",
+  },
+  {
+    id: 3,
+    url: "/images/product/image-product-3-thumbnail.jpg",
+    fullSizeImgURL: "/images/product/image-product-3.jpg",
+  },
+  {
+    id: 4,
+    url: "/images/product/image-product-4-thumbnail.jpg",
+    fullSizeImgURL: "/images/product/image-product-4.jpg",
+  },
+]);
 
 /////////////////////////// methods
 const increment = () => {

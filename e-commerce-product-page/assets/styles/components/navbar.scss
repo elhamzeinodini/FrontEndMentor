@@ -41,13 +41,40 @@
   }
 
   .right {
-    img {
-      &:nth-child(1) {
-        margin-right: $font-size-sm;
+    .shop-icon {
+      position: relative;
+
+      span {
+        font-size: $font-size-sm;
+        display: block;
+        position: absolute;
+        inset: 2px auto auto 10px;
+        background-color: $orange;
+        color: $white;
+        width: 1rem;
+        @include FlexBox(center, center, row);
+        border-radius: 10px;
+        z-index: 9999999;
+        font-weight: $font-weight-bold;
       }
 
+      .el-icon {
+        cursor: pointer;
+        margin-right: $font-size-sm;
+        font-size: $font-size-xl;
+        transform: translateY(6px);
+      }
+    }
+
+    img {
       &:nth-child(2) {
         width: 2rem;
+        border: 2px solid transparent;
+        border-radius: 50%;
+
+        &:hover {
+          border-color: $orange;
+        }
       }
     }
   }

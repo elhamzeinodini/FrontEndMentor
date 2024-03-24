@@ -108,7 +108,7 @@
   }
 
   // ============ Media Queries ===============
-  @media screen and (min-width: $tablet-breakpoint) and (max-width: $laptop-breakpoint) {
+  @media screen and (min-width: $tablet-breakpoint) and (max-width: $mini-desktop-breakpoint) {
     .main {
       max-width: 500px;
       margin-inline: auto;
@@ -121,12 +121,12 @@
     }
   }
 
-  @media screen and (min-width: $laptop-breakpoint) {
+  @media screen and (min-width: $mini-desktop-breakpoint) {
     max-width: 70vw;
     margin-inline: auto;
 
     .main {
-      @include FlexBox();
+      @include FlexBox(space-between, stretch, row);
       height: 100%;
 
       .carousel {
@@ -137,8 +137,85 @@
         }
       }
 
+      .product-img-selection {
+        .main-img {
+          img {
+            width: 90%;
+            border-radius: $medium-border-radius;
+          }
+        }
+
+        .thumbnails-list {
+          margin-top: $font-size-xxs;
+          width: 90%;
+          @include FlexBox(center, center, row);
+
+          li {
+            cursor: pointer;
+
+            &.selected-product {
+              img {
+                border-radius: calc($small-border-radius + 1px);
+                border: 2px solid $orange;
+              }
+
+              position: relative;
+              &::after {
+                content: "";
+                position: absolute;
+                inset: 0 auto auto 0;
+                background-color: transparentize($color: $white, $amount: 0.4);
+                width: 100%;
+                height: 100%;
+              }
+            }
+
+            img {
+              border-radius: $small-border-radius;
+              width: 4rem;
+              height: 4rem;
+            }
+
+            &:not(:last-child) {
+              margin-right: $font-size-xs;
+            }
+          }
+        }
+      }
+
       .content {
+        margin-block: auto;
         width: 50% !important;
+
+        h1 {
+          font-size: $font-size-xxl;
+        }
+
+        .pricing {
+          margin-bottom: $font-size-md;
+
+          .left {
+            width: 8rem;
+            @include FlexBox(flex-start, center, row);
+          }
+
+          @include FlexBox(flex-start, stretch, column);
+        }
+
+        .actions {
+          @include FlexBox();
+
+          button {
+            &:nth-child(1) {
+              margin-bottom: 0 !important;
+              width: 45%;
+            }
+
+            &:nth-child(2) {
+              width: 54%;
+            }
+          }
+        }
       }
     }
   }
