@@ -12,3 +12,8 @@ body {
   font-family: $default-font, sans-serif;
   position: relative;
 }
+
+ul,
+li {
+  list-style-type: none;
+}

@@ -1,0 +1,5 @@
+.home-page {
+  padding: $gap-3 $gap-2;
+  @include FlexBox(center, center, column);
+  text-align: center;
+}

@@ -35,3 +35,7 @@ const plansInfo: IPlansInfo[] = [
   },
 ];
 </script>
+
+<style lang="scss">
+@import "/assets/sass/pages/home.scss";
+</style>
