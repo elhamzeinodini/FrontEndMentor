@@ -1,0 +1,32 @@
+.toggle-button {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 13rem;
+
+  span {
+    display: inline-block;
+    font-size: $font-size-md;
+    color: $light-grayish-blue;
+    font-weight: 700;
+  }
+
+  .toggle {
+    width: 4rem;
+    border-radius: 1rem;
+    background-color: $clr-blue;
+    box-shadow: $default-shadow;
+    position: relative;
+    height: 2rem;
+
+    .circle {
+      width: 1.5rem;
+      height: 1.5rem;
+      background-color: $very-light-grayish-blue;
+      border-radius: 50%;
+      position: absolute;
+      inset: 0.25rem auto auto 0.35rem;
+      cursor: pointer;
+    }
+  }
+}

@@ -2,11 +2,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
 
 // colors
-$gradient-bg: linear-gradient(
-  45deg,
-  hsl(236, 72%, 79%) 70%,
-  hsl(237, 63%, 64%) 30%
-);
+$clr-blue: hsl(237, 63%, 64%);
 $very-light-grayish-blue: hsl(240, 78%, 98%);
 $light-grayish-blue: hsl(234, 14%, 74%);
 $grayish-blue: hsl(233, 13%, 49%);
@@ -23,6 +19,7 @@ $font-size-xxl: 48px;
 
 // defaults
 $default-font: "Montserrat";
+$default-shadow: rgba(0, 0, 0, 0.18) 0px 2px 4px;
 
 // screen breakpoints
 $desktop-breakpoint: 1400px;

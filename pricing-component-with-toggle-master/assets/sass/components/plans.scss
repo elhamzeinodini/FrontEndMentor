@@ -1,0 +1,72 @@
+.app-plans {
+  @mixin divider($top, $right, $bottom, $left) {
+    &::after {
+      content: "";
+      position: absolute;
+      inset: $top $right $bottom $left;
+      width: 100%;
+      border-bottom: 1px solid $light-grayish-blue;
+    }
+  }
+
+  background-color: $very-light-grayish-blue;
+  box-shadow: $default-shadow;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  cursor: pointer;
+
+  &:hover {
+    background-color: $clr-blue;
+    transition: all 0.3s ease;
+    transform: scale(1.1);
+
+    b,
+    span,
+    li {
+      color: $very-light-grayish-blue;
+    }
+
+    button {
+      background-color: $very-light-grayish-blue;
+      color: $clr-blue;
+      border-color: transparent;
+    }
+  }
+
+  b {
+    color: $dark-grayish-blue;
+  }
+
+  span {
+    display: block;
+    font-size: $font-size-xxl;
+    font-weight: 700;
+    margin-block: 0.75rem;
+    color: #333;
+    width: 100%;
+    text-align: center;
+    position: relative;
+    @include divider(5.3rem, 0, auto, auto);
+  }
+
+  ul {
+    width: 100%;
+    margin: 2rem 0 0.75rem 0;
+
+    li {
+      text-align: center;
+      width: 100%;
+      display: block;
+      margin-bottom: 2rem;
+      position: relative;
+      @include divider(2rem, 0, auto, auto);
+      font-size: $font-size-md;
+      color: $dark-grayish-blue;
+      font-weight: 700;
+    }
+  }
+}

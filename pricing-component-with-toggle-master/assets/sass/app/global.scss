@@ -7,8 +7,31 @@
 
 body {
   box-sizing: border-box;
-  min-height: 100vh;
   background-color: $very-light-grayish-blue;
   font-family: $default-font, sans-serif;
   position: relative;
+}
+
+ul,
+li {
+  list-style-type: none;
+}
+
+button {
+  all: unset;
+  font-family: inherit;
+  background-color: $clr-blue;
+  color: $very-light-grayish-blue;
+  font-weight: 700;
+  letter-spacing: 2px;
+  font-size: $font-size-md;
+  cursor: pointer;
+  width: 100%;
+  border-radius: 5px;
+  border: 2px solid transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.5rem;
+  box-sizing: border-box;
 }
