@@ -13,16 +13,18 @@
   box-shadow: $default-shadow;
   padding: 1rem;
   border-radius: 0.5rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
+  @include FlexBox(center, center, column);
   cursor: pointer;
+
+  @media screen and (min-width: $laptop-breakpoint) {
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
 
   &:hover {
     background-color: $clr-blue;
     transition: all 0.3s ease;
-    transform: scale(1.1);
 
     b,
     span,
