@@ -1,0 +1,61 @@
+.contact-us-page {
+  @mixin star($top, $right, $bottom, $left) {
+    content: "*";
+    position: absolute;
+    inset: top right bottom left;
+    color: $clr-green;
+  }
+
+  @mixin inputStyle {
+    padding: 1rem;
+    border-radius: 0.5rem;
+    border: 1px solid $clr-gray-dark;
+  }
+
+  background-color: $clr-white;
+  border-radius: 1rem;
+  padding: 1rem 2rem;
+  display: flex;
+  flex-direction: column;
+  width: 90vw;
+  margin-inline: auto;
+
+  form {
+    h1 {
+      font-size: 1.5rem;
+    }
+
+    .inputs {
+      margin-top: 2rem;
+
+      .input-wrapper {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 2rem;
+
+        &:nth-child(4) {
+          display: flex;
+
+          .general-req,
+          .support-req {
+            @include inputStyle();
+          }
+
+          .general-req {
+            margin-bottom: 1rem;
+          }
+        }
+
+        label {
+          position: relative;
+          margin-bottom: 0.5rem;
+          color: $clr-gray-dark;
+        }
+
+        input {
+          @include inputStyle();
+        }
+      }
+    }
+  }
+}
