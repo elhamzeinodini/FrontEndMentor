@@ -1,9 +1,11 @@
 .contact-us-page {
   @mixin star($top, $right, $bottom, $left) {
-    content: "*";
-    position: absolute;
-    inset: top right bottom left;
-    color: $clr-green;
+    &::after {
+      content: "*";
+      position: absolute;
+      inset: $top $right $bottom $left;
+      color: $clr-green;
+    }
   }
 
   @mixin inputStyle {
@@ -33,16 +35,73 @@
         flex-direction: column;
         margin-bottom: 2rem;
 
+        &:nth-child(1),
+        &:nth-child(2),
         &:nth-child(4) {
-          display: flex;
+          .input-label {
+            position: relative;
+            @include star(0, auto, auto, 5.2rem);
+          }
+        }
 
+        &:nth-child(3) {
+          .input-label {
+            position: relative;
+            @include star(0, auto, auto, 6.9rem);
+          }
+        }
+
+        &:nth-child(4) {
           .general-req,
           .support-req {
             @include inputStyle();
+            display: flex;
+            align-items: center;
+
+            input[type="radio"] {
+              margin-right: 0.5rem;
+            }
+
+            label {
+              display: inline-block;
+              font-size: 0.75rem;
+              transform: translateY(3.5px);
+            }
           }
 
           .general-req {
             margin-bottom: 1rem;
+          }
+        }
+
+        &:nth-child(5) {
+          .input-label {
+            position: relative;
+            @include star(0, auto, auto, 4.5rem);
+          }
+
+          textarea {
+            @include inputStyle();
+            box-sizing: border-box;
+            height: 150px;
+            resize: none;
+          }
+        }
+
+        &:nth-child(6) {
+          display: flex;
+          align-items: center;
+          flex-direction: row-reverse;
+          justify-content: flex-end;
+
+          label {
+            font-size: 0.75rem;
+            transform: translateY(4px);
+            margin-left: 0.5rem;
+            max-width: 27ch;
+            position: relative;
+
+            @include star(0.9rem, auto, auto, 3.3rem);
           }
         }
 
@@ -55,6 +114,25 @@
         input {
           @include inputStyle();
         }
+      }
+    }
+
+    button {
+      all: unset;
+      font-family: inherit;
+      width: 100%;
+      color: $clr-white;
+      font-weight: 600;
+      font-size: 0.75rem;
+      text-align: center;
+      padding: 0.75rem 1.5rem;
+      border-radius: 0.3rem;
+      box-sizing: border-box;
+      background-color: $clr-green;
+      cursor: pointer;
+
+      &:hover {
+        background-color: $clr-gray-dark;
       }
     }
   }
